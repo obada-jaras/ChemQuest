@@ -15104,6 +15104,10 @@ PrefabInstance:
       propertyPath: near clip plane
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -16691,8 +16695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d20997e5170983468a1860d6694b0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 10
-  speed: 4
+  mouseSensitivity: 10
+  moveSpeed: 4
   jumpForce: 5
   crouchScale: 0.2
 --- !u!1 &811148823
