@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FPSMovement : MonoBehaviour
 {
-    public float moveSpeed = 10f;
+    public float moveSpeed = 1f;
     public float sensitivity = 100f;
 
     // Start is called before the first frame update
@@ -20,9 +20,5 @@ public class FPSMovement : MonoBehaviour
         float v = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
 
         transform.Translate(new Vector3(h, 0f, v));
-        
-
-
     }
-
 }
