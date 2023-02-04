@@ -5,18 +5,37 @@ using UnityEngine;
 
 public class FPSMovement : MonoBehaviour
 {
-    public float mouseSensitivity = 10f;
-    public float moveSpeed = 4f;
-    public float jumpForce = 50f;
-    public float crouchScale = 0.2f;
+    public float mouseSensitivity = 15f;
+    private float minimumVertical = -60f;
+    private float moveSpeed = 4f;
+    private float jumpForce = 50f;
+    private float crouchScale = 0.2f;
 
     private Rigidbody rigidBody;
     private Vector3 standingScale;
 
+    private enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
+    private RotationAxes axes;
+    private float sensitivityX;
+    private float sensitivityY;
+    private float minimumY;
+    private float maximumY;
+    private float rotationY;
+
     private void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();
         standingScale = transform.localScale;
+        
+        // Make the rigid body not change rotation
+        if (rigidBody)
+            rigidBody.freezeRotation = true;
+
+        axes = RotationAxes.MouseXAndY;
+        sensitivityX = mouseSensitivity;
+        sensitivityY = mouseSensitivity;
+        minimumY = minimumVertical;
+        maximumY = -minimumVertical;
+        rotationY = 0f;
     }
 
     void Update()
@@ -29,14 +48,29 @@ public class FPSMovement : MonoBehaviour
 
     private void LookAroundWithMouse()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-
-        transform.Rotate(Vector3.up, mouseX, Space.World);
-        transform.RotateAround(transform.position, transform.right, -mouseY);
+        if (axes == RotationAxes.MouseXAndY)
+        {
+            float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
+            
+            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+            rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
+            
+            transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+        }
+        else if (axes == RotationAxes.MouseX)
+        {
+            transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
+        }
+        else
+        {
+            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+            rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
+            
+            transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+        }
     }
 
-     private void MoveCharacter()
+    private void MoveCharacter()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
