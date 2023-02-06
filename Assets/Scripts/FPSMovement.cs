@@ -79,7 +79,18 @@ public class FPSMovement : MonoBehaviour
         direction.y = 0f; // exclude the upward component
         direction = direction.normalized * moveSpeed * Time.deltaTime;
 
-        transform.position += direction;
+        Vector3 nextPosition = transform.position + direction;
+
+        // Check for collision with the wall
+        RaycastHit hit;
+        if (Physics.Linecast(transform.position, nextPosition, out hit))
+        {
+            // If there is a collision with a wall, return the player a little to the back
+            transform.position = hit.point - (direction.normalized * 0.01f);
+            return;
+        }
+
+        transform.position = nextPosition;
     }
 
     private void HandleCrouch()
