@@ -27,8 +27,8 @@ public class FPSMovement : MonoBehaviour
         standingScale = transform.localScale;
         
         // Make the rigid body not change rotation
-        if (rigidBody)
-            rigidBody.freezeRotation = true;
+        rigidBody = GetComponent<Rigidbody>();
+        rigidBody.freezeRotation = true;
 
         axes = RotationAxes.MouseXAndY;
         sensitivityX = mouseSensitivity;
@@ -85,6 +85,13 @@ public class FPSMovement : MonoBehaviour
         RaycastHit hit;
         if (Physics.Linecast(transform.position, nextPosition, out hit))
         {
+            // If there is a collision with a door, ignore it and continue moving
+            if (hit.transform.CompareTag("door"))
+            {
+                transform.position = nextPosition;
+                return;
+            }
+
             // If there is a collision with a wall, return the player a little to the back
             transform.position = hit.point - (direction.normalized * 0.01f);
             return;
