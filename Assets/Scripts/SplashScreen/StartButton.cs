@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
-    public Button startButton;
+    public GameObject EndButton;
 
     void Start()
     {
-        Button btn = startButton.GetComponent<Button>();
+        Button btn = EndButton.GetComponent<Button>();
 		btn.onClick.AddListener(moveToGameScene);
     }
 
