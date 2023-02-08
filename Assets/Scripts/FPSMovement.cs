@@ -111,13 +111,4 @@ public class FPSMovement : MonoBehaviour
             transform.localScale = standingScale;
         }
     }
-   
-    private void FixedUpdate()
-    {
-        // TODO : Fix Jumping
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rigidBody.AddForce(Vector3.up * jumpForce);
-        }
-    }
 }
