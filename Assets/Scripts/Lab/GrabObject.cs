@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GrabObject : MonoBehaviour
 {
-    public GameObject firstPersonCharacter;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -14,6 +15,7 @@ public class GrabObject : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             if (Physics.Raycast(ray, out hit))
             {
+                // Debug.Log(hit.collider.gameObject.name + "\t|\tSINGLE HIT");
                 if (hit.collider.gameObject.tag == "grab")
                 {
                     grabObject(hit);
@@ -24,6 +26,7 @@ public class GrabObject : MonoBehaviour
                     RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity);
                     foreach (RaycastHit h in hits)
                     {
+                        // Debug.Log(h.collider.gameObject.name + "\t|\tMULTIPLE HITS");
                         if (h.collider.gameObject.tag == "grab")
                         {
                            grabObject(h); 
@@ -32,21 +35,21 @@ public class GrabObject : MonoBehaviour
                 }
             }
         }
-
-        updatePositionAndRotation();
     }
 
     
     void grabObject(RaycastHit obj)
     {
+        string objectName = obj.collider.gameObject.name;
+        if (objectName == "laptop1" || objectName == "laptop" || objectName == "screen")
+        {
+            openLaptop();
+        }
     }
 
-    void releaseObject()
+    void openLaptop()
     {
-    }
-
-
-    void updatePositionAndRotation()
-    {
+        SceneManager.LoadScene("Laptop");
+        // Cursor.visible = false;
     }
 }

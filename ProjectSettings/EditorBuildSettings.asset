@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Lab/Lab.unity
     guid: efc9148cad4e3404cb61363cc5fec72b
   - enabled: 1
-    path: Assets/Scenes/Lab/Laptop.unity
+    path: Assets/Scenes/Lab/Labtop/Laptop.unity
     guid: f2007953174ca2a49ac3f35c14c68f51
   m_configObjects: {}
