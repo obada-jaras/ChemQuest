@@ -24,6 +24,8 @@ public class FPSMovement : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
+
         standingScale = transform.localScale;
         
         // Make the rigid body not change rotation

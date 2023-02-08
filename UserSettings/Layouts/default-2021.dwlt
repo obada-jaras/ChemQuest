@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 46
+  controlID: 103
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 47
+  controlID: 104
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 48
+  controlID: 105
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/SplashScreen
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/SplashScreen
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\obada\OneDrive\Desktop\ChemQuest
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 7}
-    m_SelectedIDs: e2a50000
-    m_LastClickedID: 42466
-    m_ExpandedIDs: 00000000c2760000c4760000c6760000c8760000ca760000cc760000ce760000d0760000d2760000d4760000d67600000e7700001677000000ca9a3bffffff7f
+    m_SelectedIDs: 625a0000
+    m_LastClickedID: 23138
+    m_ExpandedIDs: 000000005e5a0000605a0000625a0000645a0000665a0000685a00006a5a00006c5a00006e5a0000705a0000725a0000825a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c2760000c4760000c6760000c8760000ca760000cc760000ce760000d0760000d2760000d4760000d6760000
+    m_ExpandedIDs: 000000005e5a0000605a0000625a0000645a0000665a0000685a00006a5a00006c5a00006e5a0000705a0000725a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -490,7 +490,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: acf3fffff8f3ffffc2f5ffff4cf8ffff32fbffff
+      m_ExpandedIDs: c6f4ffffd0f5ffff32fbffffb88700006a8d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -772,9 +772,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 769.90436, y: 174.02371, z: 47.69806}
+    m_Target: {x: 538.45465, y: 292.3908, z: 62.534637}
     speed: 2
-    m_Value: {x: 769.90436, y: 174.02371, z: 47.69806}
+    m_Value: {x: 538.45465, y: 292.3908, z: 62.534637}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -821,13 +821,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.040483862, y: 0.016486306, z: -0.00066764985, w: 0.99904686}
+    m_Target: {x: 0.007499572, y: -0.013498727, z: 0.00010165941, w: 0.9998835}
     speed: 2
-    m_Value: {x: 0.040483747, y: 0.01648626, z: -0.0006676479, w: 0.999044}
+    m_Value: {x: 0.0074995523, y: -0.013498692, z: 0.00010165914, w: 0.99988085}
   m_Size:
-    m_Target: 242.70334
+    m_Target: 419.19733
     speed: 2
-    m_Value: 242.70334
+    m_Value: 419.19733
   m_Ortho:
     m_Target: 0
     speed: 2
