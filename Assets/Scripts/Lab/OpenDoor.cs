@@ -23,7 +23,6 @@ public class OpenDoor : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Open: " + open);
         if (open)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * openSpeed);

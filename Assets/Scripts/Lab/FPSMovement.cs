@@ -8,7 +8,6 @@ public class FPSMovement : MonoBehaviour
     public float mouseSensitivity = 15f;
     private float minimumVertical = -60f;
     private float moveSpeed = 4f;
-    private float jumpForce = 50f;
     private float crouchScale = 0.2f;
 
     private Rigidbody rigidBody;
