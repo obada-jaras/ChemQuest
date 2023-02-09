@@ -9,11 +9,11 @@ public class SelectTube : MonoBehaviour
 {
     GameObject selectedTube;
 
-    string tube1;
-    string tube2;
+    public GameObject tube1;
+    public GameObject tube2;
     public GameObject selectedTubeLabel;
     public Button grabTubeButton;
- 
+    
 
     void Update()
     {
@@ -28,12 +28,12 @@ public class SelectTube : MonoBehaviour
             {
                 if (tube1 == null)
                 {
-                    tube1 = selectedTube.name;
+                    tube1 = selectedTube;
                     moveTube(new Vector3(-2.021f, 0.7923398f, -0.263f));
                 }
                 else if (tube2 == null)
                 {
-                    tube2 = selectedTube.name;
+                    tube2 = selectedTube;
                     moveTube(new Vector3(-1f, 0.7923398f, -0.263f));
                 }
             }
@@ -44,9 +44,22 @@ public class SelectTube : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            grabTubeButton.gameObject.SetActive(true);
+            if (tube1 == null || tube2 == null)
+            {
+                grabTubeButton.GetComponentInChildren<Text>().text = "Press E to Grab Tube";
+                if (selectedTube != null)
+                {
+                    grabTubeButton.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                grabTubeButton.GetComponentInChildren<Text>().text = "Press Q to Start the Reaction";
+                grabTubeButton.gameObject.SetActive(true);
+            }
         }
     }
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -77,7 +90,6 @@ public class SelectTube : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         if (Physics.Raycast(ray, out hit))
         {
-            // Debug.Log(hit.collider.gameObject.name + "\t|\tSINGLE HIT");
             if (hit.collider.gameObject.tag == "grab")
             {
                 grabObject(hit);
@@ -88,7 +100,6 @@ public class SelectTube : MonoBehaviour
                 RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity);
                 foreach (RaycastHit h in hits)
                 {
-                    // Debug.Log(h.collider.gameObject.name + "\t|\tMULTIPLE HITS");
                     if (h.collider.gameObject.tag == "grab")
                     {
                         grabObject(h);

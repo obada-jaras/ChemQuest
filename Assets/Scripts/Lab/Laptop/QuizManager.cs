@@ -11,15 +11,22 @@ public class QuizManager : MonoBehaviour
     public GameObject QuizPanel;
     public GameObject EndPanel;
 
-    private int _totalQuestions = 0;
-    public int Solved = 0;
+    public static int _totalQuestions = 0;
+    public static int Solved = 0;
     public TMPro.TMP_Text Score;
     
     private void Start()
     {
-        _totalQuestions = questions.Count;
         ShowQuizPanel();
         GenerateQuestion();
+        InitializeScore();
+    }
+
+    private void InitializeScore()
+    {
+        _totalQuestions = questions.Count;
+        Score.text = "Score: " + Solved.ToString() + "/" + _totalQuestions.ToString();
+        Solved = 0;
     }
 
     public void CorrectAnswer()
@@ -69,6 +76,8 @@ public class QuizManager : MonoBehaviour
 
         PutAnswersInButtons();
     }
+
+
     private void PutAnswersInButtons()
     {
         for (int i = 0; i < buttons.Length; i++)
