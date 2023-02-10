@@ -15,6 +15,6 @@ public class ScoreSystem : MonoBehaviour
     void Update()
     {
         currentScore = QuizManager.Solved + 1;
-        Debug.Log("Score: " + currentScore.ToString() + "/" + maxScore.ToString());
+        // Debug.Log("Score: " + currentScore.ToString() + "/" + maxScore.ToString());
     }
 }

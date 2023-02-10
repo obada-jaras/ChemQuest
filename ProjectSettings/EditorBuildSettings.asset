@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lab/Labtop/Laptop.unity
     guid: f2007953174ca2a49ac3f35c14c68f51
+  - enabled: 1
+    path: Assets/Scenes/SplashScreen/SplashScreen.unity
+    guid: dc4547d42c0220d41923074ce58c9572
   m_configObjects: {}
