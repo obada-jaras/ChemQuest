@@ -5,13 +5,15 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public GameObject TimeOverPopup;
+    public GameObject scoreText;
 
-    public float timeLimit = 180f;
+    public float timeLimit;
     private float timeRemaining;
     private Text timerText;
 
     void Start()
     {
+        timeLimit = 179f;
         timeRemaining = timeLimit;
         timerText = GetComponent<Text>();
     }
@@ -27,6 +29,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            scoreText.GetComponent<Text>().text = ScoreSystem.scoreString;
             TimeOverPopup.SetActive(true);
             Cursor.visible = true;
         }

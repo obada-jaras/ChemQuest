@@ -48674,7 +48674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeOverPopup: {fileID: 830980808}
-  timeLimit: 179
+  scoreText: {fileID: 1436694632}
+  timeLimit: 0
 --- !u!1 &1785937969
 GameObject:
   m_ObjectHideFlags: 0
