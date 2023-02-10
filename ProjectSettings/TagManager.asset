@@ -9,6 +9,8 @@ TagManager:
   - grab
   - obstacle
   - area
+  - fire
+  - 'insideSolution '
   layers:
   - Default
   - TransparentFX

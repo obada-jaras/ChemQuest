@@ -11,6 +11,8 @@ public class ResetReactionsArea : MonoBehaviour
 
     private GameObject[] objectsToReset;
 
+    public GameObject flaskSolution;
+
     private void Start()
     {
         // Get all the objects you want to reset
@@ -46,5 +48,11 @@ public class ResetReactionsArea : MonoBehaviour
         }
 
         selectedTubeLabel.GetComponent<UnityEngine.UI.Text>().text = "Selected Tube: None";
+        SelectTube.tube1 = null;
+        SelectTube.tube2 = null;
+        SelectTube.selectedTube = null;
+
+        flaskSolution.transform.localScale = Vector3.zero;
+
     }
 }

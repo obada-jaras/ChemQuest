@@ -14,6 +14,8 @@ public class QuizManager : MonoBehaviour
     public static int _totalQuestions = 0;
     public static int Solved = 0;
     public TMPro.TMP_Text Score;
+
+    public static bool QuizFinished = false;
     
     private void Start()
     {
@@ -67,6 +69,7 @@ public class QuizManager : MonoBehaviour
     {
         QuizPanel.SetActive(false);
         EndPanel.SetActive(true);
+        QuizFinished = true;
     }
 
     private void GenerateQuestion()

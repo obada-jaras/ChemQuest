@@ -9,15 +9,11 @@ public class ScoreSystem : MonoBehaviour
 
     public static string scoreString;
 
-    private Reaction[] reactions = new Reaction[2];
-    void Start()
-    {
-        reactions[0] = new Reaction(new ChemElement("H", Color.red), new ChemElement("O", Color.blue), new ChemElement("H2O", Color.green), false);
-        reactions[1] = new Reaction(new ChemElement("H", Color.red), new ChemElement("O", Color.blue), new ChemElement("H2O", Color.green), true);
-    }
+    private Reaction[] reactions;
 
     void Update()
     {
+        reactions = DoReaction.reactions;
         currentScore = QuizManager.Solved + getReactionsResults();
         maxScore = QuizManager._totalQuestions + reactions.Length;
         scoreString = currentScore + "/" + maxScore;

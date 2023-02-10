@@ -22,31 +22,25 @@ public class FeedbackSystem : MonoBehaviour
     public Sprite laptopColored;
 
 
-    private Reaction[] reactions = new Reaction[5];
-    void Start()
-    {
-        reactions[0] = new Reaction(new ChemElement("H", Color.red), new ChemElement("O", Color.blue), new ChemElement("H2O", Color.green), true);
-        reactions[1] = new Reaction(new ChemElement("H", Color.red), new ChemElement("O", Color.blue), new ChemElement("H2O", Color.green), true);
-        reactions[2] = new Reaction(new ChemElement("H", Color.red), new ChemElement("O", Color.blue), new ChemElement("H2O", Color.green), true);
-        reactions[3] = new Reaction(new ChemElement("H", Color.red), new ChemElement("O", Color.blue), new ChemElement("H2O", Color.green), true);
-        reactions[4] = new Reaction(new ChemElement("H", Color.red), new ChemElement("O", Color.blue), new ChemElement("H2O", Color.green), true);
-    }
+    private Reaction[] reactions;
 
     void Update()
     {
+        reactions = DoReaction.reactions;
+
         if (reactions[0].finished) {
-            ChangeImage(levelTube1, tube1Colored);
-        }
-        if (reactions[1].finished) {
-            ChangeImage(levelTube2, tube2Colored);
-        }
-        if (reactions[2].finished) {
             ChangeImage(levelTube3, tube3Colored);
         }
-        if (reactions[3].finished) {
+        if (reactions[1].finished) {
+            ChangeImage(levelTube1, tube1Colored);
+        }
+        if (reactions[2].finished) {
             ChangeImage(levelBunsenBurner, bunsenBurnerColored);
         }
-        if (reactions[4].finished) {
+        if (reactions[3].finished) {
+            ChangeImage(levelTube2, tube2Colored);
+        }
+        if (QuizManager.QuizFinished) {
             ChangeImage(levelLaptop, laptopColored);
         }
     }

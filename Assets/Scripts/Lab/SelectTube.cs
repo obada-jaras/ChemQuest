@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class SelectTube : MonoBehaviour
 {
-    GameObject selectedTube;
+    public static GameObject selectedTube;
 
-    public GameObject tube1;
-    public GameObject tube2;
+    public static GameObject tube1;
+    public static GameObject tube2;
     public GameObject selectedTubeLabel;
     public Button grabTubeButton;
     
