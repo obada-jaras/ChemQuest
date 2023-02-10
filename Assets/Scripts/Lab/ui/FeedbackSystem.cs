@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class FeedbackSystem : MonoBehaviour
 {
+    public GameObject wonPanel;
+
     public GameObject levelTube1;
     public Sprite tube1Colored;
     
@@ -27,6 +29,7 @@ public class FeedbackSystem : MonoBehaviour
     void Update()
     {
         reactions = DoReaction.reactions;
+        checkAllTasks();
 
         if (reactions[0].finished) {
             ChangeImage(levelTube3, tube3Colored);
@@ -50,5 +53,11 @@ public class FeedbackSystem : MonoBehaviour
     {
         Image image = gameObject.GetComponent<Image>();
         image.sprite = newSprite;
+    }
+
+    void checkAllTasks() {
+        if (reactions[0].finished && reactions[1].finished && reactions[2].finished && reactions[3].finished && QuizManager.QuizFinished) {
+            wonPanel.SetActive(true);
+        }
     }
 }
