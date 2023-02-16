@@ -356,13 +356,6 @@ MonoBehaviour:
     - Cb
     - Cu
     CorrectAnswer: 1
-  - QuestionText: What is the symbol for carbon
-    Answers:
-    - Ca
-    - C
-    - Cb
-    - Cu
-    CorrectAnswer: 1
   buttons:
   - {fileID: 1775942857}
   - {fileID: 721143803}
@@ -372,7 +365,6 @@ MonoBehaviour:
   Question: {fileID: 567211948}
   QuizPanel: {fileID: 681650006}
   EndPanel: {fileID: 1813396030}
-  Solved: 0
   Score: {fileID: 1818697094}
 --- !u!4 &337851454
 Transform:
