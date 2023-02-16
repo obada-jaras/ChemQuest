@@ -16,6 +16,8 @@ public class DoReaction : MonoBehaviour
     bool firstElementSet = false;
     bool secondElementSet = false;
 
+    public GameObject wrongReactionPopup;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,9 +54,17 @@ public class DoReaction : MonoBehaviour
                     Debug.Log("The reaction between " + firstElementObject.name + " and " + secondElementObject.name + " results in " + result.name);
                 } else {
                     Debug.Log("Wrong reaction elements, check the correct elements and get them");
+                    // active the wrong reaction popup for 2 seconds
+                    wrongReactionPopup.SetActive(true);
+                    StartCoroutine(DeactivateWrongReactionPopup(4f));
                 }
             }
         }
+    }
+
+    IEnumerator DeactivateWrongReactionPopup(float time) {
+        yield return new WaitForSeconds(time);
+        wrongReactionPopup.SetActive(false);
     }
 
     void setOriginalPositions() {
