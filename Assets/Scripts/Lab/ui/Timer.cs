@@ -7,15 +7,18 @@ public class Timer : MonoBehaviour
     public GameObject TimeOverPopup;
     public GameObject scoreText;
 
-    public float timeLimit;
-    private float timeRemaining;
+    public static float timeRemaining;
     private Text timerText;
 
     void Start()
     {
-        timeLimit = 179f;
-        timeRemaining = timeLimit;
+        if (timeRemaining <= 0)
+        {
+            timeRemaining = 179f;
+        }
+
         timerText = GetComponent<Text>();
+        TimeOverPopup.SetActive(false);
     }
 
     void Update()
@@ -35,3 +38,4 @@ public class Timer : MonoBehaviour
         }
     }
 }
+ 

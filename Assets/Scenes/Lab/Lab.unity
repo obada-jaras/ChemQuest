@@ -43977,7 +43977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 03:00
+  m_Text: 
 --- !u!222 &1783858334
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44000,7 +44000,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeOverPopup: {fileID: 830980808}
   scoreText: {fileID: 1029683119}
-  timeLimit: 0
 --- !u!1 &1785937969
 GameObject:
   m_ObjectHideFlags: 0
