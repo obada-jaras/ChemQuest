@@ -86,16 +86,12 @@ public class FPSMovement : MonoBehaviour
         RaycastHit hit;
         if (Physics.Linecast(transform.position, nextPosition, out hit))
         {
-            // If there is a collision with a door or area, ignore it and continue moving
-            if (hit.transform.CompareTag("door") || hit.transform.CompareTag("area"))
+            // If there is a collision with a wall, return the player a little to the back
+            if (hit.transform.CompareTag("obstacle"))
             {
-                transform.position = nextPosition;
+                transform.position = hit.point - (direction.normalized * 0.01f);
                 return;
             }
-
-            // If there is a collision with a wall, return the player a little to the back
-            transform.position = hit.point - (direction.normalized * 0.01f);
-            return;
         }
 
         transform.position = nextPosition;
