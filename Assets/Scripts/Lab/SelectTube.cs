@@ -40,7 +40,7 @@ public class SelectTube : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -68,6 +68,9 @@ public class SelectTube : MonoBehaviour
             grabTubeButton.gameObject.SetActive(false);
         }
     }
+
+
+
 
     void moveTube(Vector3 targetPosition)
     {
